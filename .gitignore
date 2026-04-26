@@ -1,0 +1,22 @@
+# Node / Next
+apps/web/node_modules/
+apps/web/.next/
+apps/web/out/
+
+# Foundry build artifacts
+contracts/cache/
+contracts/out/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc

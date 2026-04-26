@@ -1,0 +1,52 @@
+{
+  "market_id": "1",
+  "question": "Did SpaceX complete the Starship Flight 5 booster catch by 2024-10-13T23:59:59Z?",
+  "deadline": "2024-10-13T23:59:59Z",
+  "requested_at": "2024-10-14T00:30:00Z",
+  "evidence_notes": [
+    "Market resolves YES if the booster catch occurred on or before the deadline.",
+    "Official and reputable news sources should dominate social commentary."
+  ],
+  "sources": [
+    {
+      "url": "https://www.spacex.com/launches/mission/?missionId=starship-flight-5",
+      "title": "Starship Flight 5 mission update",
+      "excerpt": "SpaceX announced that Super Heavy completed the tower catch during Flight 5.",
+      "published_at": "2024-10-13T15:10:00Z",
+      "source_type": "official",
+      "reliability_hint": 0.98,
+      "stance": "YES",
+      "notes": "Primary issuer describing the event outcome."
+    },
+    {
+      "url": "https://www.reuters.com/world/us/spacex-starship-flight-5-booster-catch-2024-10-13/",
+      "title": "Reuters reports SpaceX catches booster in Starship Flight 5 test",
+      "excerpt": "Reuters said the rocket booster was successfully caught by the launch tower after the test flight.",
+      "published_at": "2024-10-13T16:05:00Z",
+      "source_type": "news",
+      "reliability_hint": 0.95,
+      "stance": "YES",
+      "notes": "Independent corroboration from a major newswire."
+    },
+    {
+      "url": "https://www.nasa.gov/news-release/starship-flight-5-wrap/",
+      "title": "NASA roundup references Starship Flight 5 catch",
+      "excerpt": "NASA's launch roundup noted that SpaceX completed the booster catch attempt during Flight 5.",
+      "published_at": "2024-10-14T01:00:00Z",
+      "source_type": "official",
+      "reliability_hint": 0.9,
+      "stance": "YES",
+      "notes": "Published after deadline but reports on the completed event."
+    },
+    {
+      "url": "https://example-social.com/post/123",
+      "title": "Watcher says the attempt may have failed",
+      "excerpt": "A social media post claimed the vehicle could have missed the catch before full footage was available.",
+      "published_at": "2024-10-13T14:58:00Z",
+      "source_type": "social",
+      "reliability_hint": 0.25,
+      "stance": "NO",
+      "notes": "Low-reliability conflicting signal included to show mixed evidence handling."
+    }
+  ]
+}

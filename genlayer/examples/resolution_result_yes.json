@@ -1,0 +1,48 @@
+{
+  "question": "Did SpaceX complete the Starship Flight 5 booster catch by 2024-10-13T23:59:59Z?",
+  "market_id": "1",
+  "deadline": "2024-10-13T23:59:59Z",
+  "outcome": "YES",
+  "confidence": 0.99,
+  "reasoning": "Outcome YES selected because weighted corroboration favored it over the alternative. yes_score=1.69, no_score=0.00, confidence=0.99. Top evidence: spacex.com:YES:0.71; nasa.gov:YES:0.63; reuters.com:YES:0.36.",
+  "evidence_summary": "- Starship Flight 5 mission update (spacex.com) supports YES with reliability=0.98, directness=0.85, temporal_relevance=0.85.\n- NASA roundup references Starship Flight 5 catch (nasa.gov) supports YES with reliability=0.90, directness=0.70, temporal_relevance=1.00.\n- Reuters reports SpaceX catches booster in Starship Flight 5 test (reuters.com) supports YES with reliability=0.95, directness=0.55, temporal_relevance=0.85.",
+  "resolved_at": "GENERATED_LOCALLY_AT_RUNTIME",
+  "yes_score": 1.6934,
+  "no_score": 0,
+  "ignored_sources": 1,
+  "scored_evidence": [
+    {
+      "title": "Starship Flight 5 mission update",
+      "url": "https://www.spacex.com/launches/mission/?missionId=starship-flight-5",
+      "domain": "spacex.com",
+      "stance": "YES",
+      "score": 0.7081,
+      "directness": 0.85,
+      "reliability": 0.98,
+      "temporal_relevance": 0.85,
+      "summary": "Starship Flight 5 mission update (spacex.com) supports YES with reliability=0.98, directness=0.85, temporal_relevance=0.85."
+    },
+    {
+      "title": "Reuters reports SpaceX catches booster in Starship Flight 5 test",
+      "url": "https://www.reuters.com/world/us/spacex-starship-flight-5-booster-catch-2024-10-13/",
+      "domain": "reuters.com",
+      "stance": "YES",
+      "score": 0.3553,
+      "directness": 0.55,
+      "reliability": 0.95,
+      "temporal_relevance": 0.85,
+      "summary": "Reuters reports SpaceX catches booster in Starship Flight 5 test (reuters.com) supports YES with reliability=0.95, directness=0.55, temporal_relevance=0.85."
+    },
+    {
+      "title": "NASA roundup references Starship Flight 5 catch",
+      "url": "https://www.nasa.gov/news-release/starship-flight-5-wrap/",
+      "domain": "nasa.gov",
+      "stance": "YES",
+      "score": 0.63,
+      "directness": 0.7,
+      "reliability": 0.9,
+      "temporal_relevance": 1.0,
+      "summary": "NASA roundup references Starship Flight 5 catch (nasa.gov) supports YES with reliability=0.90, directness=0.70, temporal_relevance=1.00."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+Command: python genlayer/prediction_resolver.py genlayer/examples/resolution_request.json
+
+Result:
+- outcome: YES
+- confidence: 0.99
+- yes_score: 1.6934
+- no_score: 0.0
+- ignored_sources: 1
+
+Notes:
+- This verifies local deterministic execution of the resolver logic.
+- `resolved_at` is runtime-generated, so the example JSON artifact keeps a placeholder rather than a fixed timestamp.
+- Full GenLayer runtime execution, web fetches, and GenVM equivalence tests are documented but not executed locally here.
