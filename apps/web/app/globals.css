@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
   color-scheme: dark;
@@ -715,5 +713,12 @@ p {
   .nav-link,
   .header-status {
     min-height: 42px;
+  }
+}
+@layer base {
+  body {
+    background-color: #0a0a0a;
+    color: #e4e4e7;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 }
