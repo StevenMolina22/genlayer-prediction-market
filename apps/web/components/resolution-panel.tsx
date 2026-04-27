@@ -2,32 +2,35 @@ import { Market } from "@/lib/types";
 
 export function ResolutionPanel({ market }: { market: Market }) {
   return (
-    <section className="card stack-md">
+    <section className="card stack-md panel-premium">
       <div className="row-between gap-sm wrap">
         <div>
-          <p className="eyebrow">Resolution panel</p>
-          <h2>How this market settles</h2>
+          <p className="kicker">Resolution layer</p>
+          <h2>Show the evidence path before settlement.</h2>
         </div>
-        <span className="tag">GenLayer-aware</span>
+        <span className="signal-pill">GenLayer aware</span>
       </div>
 
-      <div className="inset-panel">
+      <div className="inset-panel surface-soft">
         <span className="label">Resolver prompt</span>
         <p className="bottomless">{market.oraclePrompt}</p>
       </div>
 
       <div className="stack-sm">
-        {market.resolutionSteps.map((step) => (
+        {market.resolutionSteps.map((step, index) => (
           <div key={step.label} className={`timeline-step timeline-${step.state}`}>
-            <div>
-              <strong>{step.label}</strong>
-              <p className="muted bottomless">{step.detail}</p>
+            <div className="timeline-row">
+              <span className="rail-index">0{index + 1}</span>
+              <div>
+                <strong>{step.label}</strong>
+                <p className="muted bottomless">{step.detail}</p>
+              </div>
             </div>
           </div>
         ))}
       </div>
 
-      <div className="inset-panel">
+      <div className="inset-panel surface-soft">
         <span className="label">Evidence checklist</span>
         <ul className="bullet-list">
           {market.evidenceSummary.map((item) => (
@@ -37,7 +40,7 @@ export function ResolutionPanel({ market }: { market: Market }) {
       </div>
 
       <p className="muted bottomless">
-        Integration point: after the GenLayer resolver finishes, the operator or relayer can submit the structured YES / NO / INVALID result to the EVM market contract so claims become available.
+        Integration point: once the GenLayer resolver produces a structured YES / NO / INVALID outcome, the operator or relay submits it to the EVM market contract and unlocks claims.
       </p>
     </section>
   );

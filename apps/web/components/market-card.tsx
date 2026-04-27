@@ -11,28 +11,27 @@ const statusTone: Record<Market["status"], string> = {
 
 export function MarketCard({ market }: { market: Market }) {
   return (
-    <article className="card market-card">
-      <div className="stack-sm">
-        <div className="row-between gap-sm wrap">
-          <span className="tag">{market.category}</span>
-          <span className={`status-pill ${statusTone[market.status]}`}>{market.status}</span>
-        </div>
+    <article className="card market-card stack-md">
+      <div className="row-between gap-sm wrap market-card-topline">
+        <span className="signal-pill">{market.category}</span>
+        <span className={`status-pill ${statusTone[market.status]}`}>{market.status}</span>
+      </div>
+
+      <div className="stack-sm market-card-copy">
         <h3>{market.question}</h3>
         <p className="muted">{market.description}</p>
       </div>
 
-      <div className="split-metrics">
+      <div className="market-pool-metrics">
         <div>
-          <span className="label">YES</span>
+          <span className="label">YES side</span>
           <strong>{market.probabilityYes}%</strong>
+          <p className="muted bottomless">{market.yesPoolEth.toFixed(1)} ETH pooled</p>
         </div>
         <div>
-          <span className="label">NO</span>
+          <span className="label">NO side</span>
           <strong>{market.probabilityNo}%</strong>
-        </div>
-        <div>
-          <span className="label">Liquidity</span>
-          <strong>{market.totalLiquidityEth.toFixed(1)} ETH</strong>
+          <p className="muted bottomless">{market.noPoolEth.toFixed(1)} ETH pooled</p>
         </div>
       </div>
 
@@ -40,15 +39,20 @@ export function MarketCard({ market }: { market: Market }) {
         <div className="progress-yes" style={{ width: `${market.probabilityYes}%` }} />
       </div>
 
-      <div className="row-between gap-sm wrap top-border">
+      <div className="market-card-footer">
         <div>
           <span className="label">Closes</span>
-          <p>{market.endDate}</p>
+          <p className="bottomless mono-copy">{market.endDate}</p>
         </div>
-        <Link href={`/markets/${market.id}`} className="button secondary-button">
-          Open detail
-        </Link>
+        <div>
+          <span className="label">Total liquidity</span>
+          <p className="bottomless mono-copy">{market.totalLiquidityEth.toFixed(1)} ETH</p>
+        </div>
       </div>
+
+      <Link href={`/markets/${market.id}`} className="button button-secondary button-full">
+        Open market detail
+      </Link>
     </article>
   );
 }

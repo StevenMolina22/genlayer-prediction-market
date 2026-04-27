@@ -7,45 +7,46 @@ export function ClaimStatusPanel({ market }: { market: Market }) {
     resolutionOutcome === "INVALID"
       ? "Refund path"
       : resolutionOutcome === "PENDING"
-        ? "Claim not yet open"
-        : "Settlement ready";
+        ? "Claim remains locked until final resolution"
+        : "Settlement is ready";
 
   return (
-    <section className="card stack-md">
+    <section className="card stack-md panel-premium settlement-shell">
       <div className="row-between gap-sm wrap">
         <div>
-          <p className="eyebrow">Claim & settlement</p>
+          <p className="kicker">Settlement</p>
           <h2>{headline}</h2>
         </div>
-        <span className="tag">Wallet state</span>
+        <span className="signal-pill">Wallet state</span>
       </div>
 
-      <div className="three-up-grid">
-        <div>
+      <div className="editorial-grid editorial-grid-wide">
+        <div className="metric-block compact-metric">
           <span className="label">Wallet</span>
           <strong>{claimStatus.walletConnected ? "Connected" : "Not connected"}</strong>
         </div>
-        <div>
+        <div className="metric-block compact-metric">
           <span className="label">Outcome</span>
           <strong>{resolutionOutcome}</strong>
         </div>
-        <div>
+        <div className="metric-block compact-metric">
           <span className="label">Claimable</span>
           <strong>{claimStatus.claimableEth} ETH</strong>
         </div>
       </div>
 
-      <div className="inset-panel">
+      <div className="inset-panel surface-soft">
         <p className="bottomless">{claimStatus.note}</p>
       </div>
 
-      <button className="button" disabled={claimStatus.claimableEth === 0 || claimStatus.hasClaimed}>
-        {claimStatus.hasClaimed ? "Already claimed" : claimStatus.claimableEth > 0 ? "Claim payout / refund" : "Await final resolution"}
-      </button>
-
-      <p className="muted bottomless">
-        Integration point: replace this mock button with a contract write for the final claim function, then refetch balances and claim status from the connected wallet.
-      </p>
+      <div className="row-between gap-sm wrap settlement-actions">
+        <button className="button button-primary" disabled={claimStatus.claimableEth === 0 || claimStatus.hasClaimed}>
+          {claimStatus.hasClaimed ? "Already claimed" : claimStatus.claimableEth > 0 ? "Claim payout / refund" : "Await final resolution"}
+        </button>
+        <p className="muted bottomless settlement-note">
+          Replace this mock action with the final contract write, then refetch wallet balances and claim state.
+        </p>
+      </div>
     </section>
   );
 }

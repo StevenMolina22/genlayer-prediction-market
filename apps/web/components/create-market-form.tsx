@@ -1,15 +1,19 @@
 export function CreateMarketForm() {
   return (
-    <section className="card stack-lg">
-      <div>
-        <p className="eyebrow">Create market UI</p>
-        <h1>Launch a new prediction market</h1>
-        <p className="muted">
-          This page is intentionally static for the hackathon repo, but every field maps to a plausible contract or resolver input.
-        </p>
+    <section className="card stack-lg create-form-shell">
+      <div className="row-between gap-sm wrap">
+        <div>
+          <p className="kicker">Create market UI</p>
+          <h2>Launch a market with clean resolution rails.</h2>
+        </div>
+        <span className="signal-pill">Static preview</span>
       </div>
 
-      <div className="form-grid">
+      <p className="muted create-form-intro">
+        This form is intentionally read-only for the hackathon demo, but the structure is real: question, timing, liquidity, and evidence policy are enough to explain the entire product contract boundary.
+      </p>
+
+      <div className="form-grid premium-form-grid">
         <label className="field">
           <span>Market question</span>
           <input defaultValue="Will GenLayer process 1M agent actions by end of 2026?" readOnly />
@@ -36,24 +40,26 @@ export function CreateMarketForm() {
         </label>
       </div>
 
-      <div className="two-column-grid">
-        <div className="inset-panel stack-sm">
+      <div className="two-column-grid compact-grid">
+        <div className="inset-panel stack-sm surface-soft">
           <span className="label">EVM contract input</span>
-          <p className="bottomless">
-            On a live path, submit the question, timing, and market metadata to the market creation function. Store the resulting market ID for routing and reads.
+          <strong>Question, deadline, resolver, liquidity rails.</strong>
+          <p className="muted bottomless">
+            A live path submits market parameters to the Foundry contract, returns a market ID, and opens the YES / NO pool.
           </p>
         </div>
-        <div className="inset-panel stack-sm">
+        <div className="inset-panel stack-sm surface-soft">
           <span className="label">GenLayer resolver input</span>
-          <p className="bottomless">
-            Pass the resolution prompt, evidence policy, and INVALID criteria so the resolver can return a structured answer later.
+          <strong>Evidence policy, ambiguity rules, INVALID fallback.</strong>
+          <p className="muted bottomless">
+            The intelligent contract receives source guidance so a later resolution can return structured settlement data instead of a black-box answer.
           </p>
         </div>
       </div>
 
       <div className="row-between gap-sm wrap top-border">
-        <p className="muted bottomless">Mock preview only — no transaction is sent in this frontend build.</p>
-        <button className="button">Create market</button>
+        <p className="muted bottomless">Mock preview only. No transaction leaves the browser in this frontend build.</p>
+        <button className="button button-primary">Create market</button>
       </div>
     </section>
   );
