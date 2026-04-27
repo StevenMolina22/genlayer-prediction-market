@@ -8,10 +8,10 @@ export default function HomePage() {
   return (
     <div className="flex flex-col gap-24 relative z-10">
       {/* Hero Section */}
-      <section className="grid lg:grid-cols-[1.2fr_1fr] gap-10 min-h-[75vh] items-center p-8 md:p-12 bg-[#121212] border border-zinc-800/50 shadow-xl shadow-black/20 hover:scale-[1.02] transition-all duration-300/[0.02] border border-white/[0.08] rounded-[2rem] shadow-2xl backdrop-blur-md relative overflow-hidden">
+      <section className="grid lg:grid-cols-[1.2fr_1fr] gap-12 min-h-[75vh] items-center py-12 md:py-20 relative">
         {/* Decorative background glow */}
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-emerald-500/20 rounded-full blur-[120px] -z-10 mix-blend-screen pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-indigo-500/20 rounded-full blur-[100px] -z-10 mix-blend-screen pointer-events-none" />
+        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[120px] -z-10 mix-blend-screen pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-indigo-500/10 rounded-full blur-[100px] -z-10 mix-blend-screen pointer-events-none" />
 
         <div className="flex flex-col gap-8 relative z-10">
           <div className="space-y-4">
@@ -28,21 +28,21 @@ export default function HomePage() {
             <Link href={`/markets/${featured.id}`} className="inline-flex h-12 items-center justify-center rounded-full bg-emerald-400 px-8 text-sm font-semibold text-emerald-950 transition-all hover:bg-emerald-300 hover:scale-[1.02] shadow-[0_0_20px_rgba(52,211,153,0.3)] hover:shadow-[0_0_25px_rgba(52,211,153,0.5)]">
               Open featured market
             </Link>
-            <Link href="/create" className="inline-flex h-12 items-center justify-center rounded-full bg-[#121212] border border-zinc-800/50 shadow-xl shadow-black/20 hover:scale-[1.02] transition-all duration-300/5 border border-white/10 px-8 text-sm font-medium text-white transition-all hover:bg-[#121212] border border-zinc-800/50 shadow-xl shadow-black/20 hover:scale-[1.02] transition-all duration-300/10 hover:border-white/20 hover:scale-[1.02]">
+            <Link href="/create" className="inline-flex h-12 items-center justify-center rounded-full border border-white/20 px-8 text-sm font-medium text-white transition-all hover:bg-white/5 hover:border-white/30 hover:scale-[1.02]">
               Review create flow
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 border-t border-white/10">
-            <div className="flex flex-col gap-2 p-4 rounded-2xl bg-[#121212] border border-zinc-800/50 shadow-xl shadow-black/20 hover:scale-[1.02] transition-all duration-300/5 border border-white/5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-10 border-t border-white/10 mt-4">
+            <div className="flex flex-col gap-2">
               <span className="text-xs uppercase tracking-wider text-white/50 font-semibold">Featured market</span>
               <strong className="text-sm text-white/90 leading-tight">{featured.question}</strong>
             </div>
-            <div className="flex flex-col gap-2 p-4 rounded-2xl bg-[#121212] border border-zinc-800/50 shadow-xl shadow-black/20 hover:scale-[1.02] transition-all duration-300/5 border border-white/5">
+            <div className="flex flex-col gap-2 md:pl-8 md:border-l md:border-white/10">
               <span className="text-xs uppercase tracking-wider text-white/50 font-semibold">YES liquidity</span>
               <strong className="text-lg text-emerald-400">{featured.yesPoolEth.toFixed(1)} ETH</strong>
             </div>
-            <div className="flex flex-col gap-2 p-4 rounded-2xl bg-[#121212] border border-zinc-800/50 shadow-xl shadow-black/20 hover:scale-[1.02] transition-all duration-300/5 border border-white/5">
+            <div className="flex flex-col gap-2 md:pl-8 md:border-l md:border-white/10">
               <span className="text-xs uppercase tracking-wider text-white/50 font-semibold">Resolver mode</span>
               <strong className="text-sm text-white/90">Structured verdict</strong>
             </div>
@@ -53,8 +53,8 @@ export default function HomePage() {
         <div className="flex flex-col gap-6 relative z-10">
           <div className="p-8 rounded-3xl bg-gradient-to-b from-white/[0.08] to-white/[0.02] border border-white/10 shadow-xl backdrop-blur-xl flex flex-col gap-6">
             <div className="flex justify-between items-center">
-              <span className="px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-xs font-semibold tracking-wide">Market in focus</span>
-              <span className="font-mono text-xs text-white/50 bg-[#121212] border border-zinc-800/50 shadow-xl shadow-black/20 hover:scale-[1.02] transition-all duration-300/5 px-2 py-1 rounded-md border border-white/10">{featured.status.toUpperCase()}</span>
+              <span className="text-emerald-400 text-xs font-bold uppercase tracking-wider">Market in focus</span>
+              <span className="font-mono text-xs text-white/50">{featured.status.toUpperCase()}</span>
             </div>
             <div>
               <h2 className="text-2xl font-bold tracking-tight text-white mb-2">{featured.question}</h2>
@@ -72,15 +72,15 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="h-3 w-full bg-[#121212] border border-zinc-800/50 shadow-xl shadow-black/20 hover:scale-[1.02] transition-all duration-300/10 rounded-full overflow-hidden shadow-inner">
+            <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden shadow-inner">
               <div className="h-full bg-gradient-to-r from-emerald-500 to-emerald-300 shadow-[0_0_10px_rgba(52,211,153,0.5)]" style={{ width: `${featured.probabilityYes}%` }} />
             </div>
           </div>
 
-          <div className="grid gap-3">
+          <div className="grid gap-6 pt-4">
             {featuredFlow.map((item, index) => (
-              <div key={item.title} className="flex gap-4 p-4 rounded-2xl bg-[#121212] border border-zinc-800/50 shadow-xl shadow-black/20 hover:scale-[1.02] transition-all duration-300/[0.03] border border-white/[0.05] hover:bg-[#121212] border border-zinc-800/50 shadow-xl shadow-black/20 hover:scale-[1.02] transition-all duration-300/[0.06] transition-colors">
-                <span className="text-emerald-400 font-mono text-sm font-semibold mt-0.5">0{index + 1}</span>
+              <div key={item.title} className="flex gap-5 pl-4 border-l-2 border-white/10 hover:border-white/30 transition-colors">
+                <span className="text-emerald-400 font-mono text-sm font-bold mt-0.5">0{index + 1}</span>
                 <div className="flex flex-col gap-1">
                   <strong className="text-white text-sm tracking-wide">{item.title}</strong>
                   <p className="text-white/50 text-xs leading-relaxed">{item.body}</p>

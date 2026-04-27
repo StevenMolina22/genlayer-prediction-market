@@ -28,13 +28,13 @@ export function MarketCard({ market }: { market: Market }) {
         <p className="text-white/50 text-sm leading-relaxed line-clamp-2">{market.description}</p>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 relative z-10">
-        <div className="flex flex-col gap-1 p-4 rounded-xl bg-white/5 border border-white/5">
+      <div className="grid grid-cols-2 gap-6 relative z-10 py-2">
+        <div className="flex flex-col gap-1">
           <span className="text-xs uppercase font-bold text-emerald-400 tracking-wider">YES</span>
           <strong className="text-2xl font-black text-white">{market.probabilityYes}%</strong>
           <p className="text-white/40 text-xs mt-1">{market.yesPoolEth.toFixed(1)} ETH pooled</p>
         </div>
-        <div className="flex flex-col gap-1 p-4 rounded-xl bg-white/5 border border-white/5">
+        <div className="flex flex-col gap-1 pl-6 border-l border-white/10">
           <span className="text-xs uppercase font-bold text-rose-400 tracking-wider">NO</span>
           <strong className="text-2xl font-black text-white/90">{market.probabilityNo}%</strong>
           <p className="text-white/40 text-xs mt-1">{market.noPoolEth.toFixed(1)} ETH pooled</p>
